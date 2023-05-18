@@ -1,0 +1,15 @@
+name: ct.test
+recipe: wordpress
+proxy:
+  appserver_nginx:
+    - ct.test
+config:
+  webroot: .
+  database: mariadb
+  via: nginx
+  php: '7.4'
+services:
+  phpmyadmin:
+    type: phpmyadmin
+  mailhog:
+    type: mailhog
